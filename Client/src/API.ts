@@ -8,6 +8,7 @@ export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
             baseUrl + "/todos"
         );
         return todos
+
     } catch (error) {
         throw new Error(error);
     }
@@ -25,6 +26,23 @@ export const addTodo = async (formData: ITodo): Promise<AxiosResponse<ApiDataTyp
             todo
         );
         return saveTodo
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+export const updateTodo = async (todo: ITodo): Promise<AxiosResponse<ApiDataType>> => {
+    try {
+        const todoUpdate: Pick<ITodo, "status"> = {
+            status: true,
+        }
+        const updatedTodo: AxiosResponse<ApiDataType> = await axios.put(
+            `${baseUrl}/edit-todo/${todo._id}`,
+            todoUpdate
+        );
+        return updatedTodo
+
     } catch (error) {
         throw new Error(error);
     }

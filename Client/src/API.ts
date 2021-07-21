@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const baseUrl: string = "http://localhost:4000";
+const baseUrl: string | undefined = process.env.API_URL;
 
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
     try {

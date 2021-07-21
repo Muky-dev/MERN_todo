@@ -1,13 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-shadow: none;
+    color: #FFF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #262626;
+}
+
+button {
+    margin: 6px;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+Main {
+    position: absolute;
+    margin-top: 20px;
+    width: 80vw;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    right: 50%;
+    transform: translateX(50%);
+    border: solid rgb(36, 36, 36);
+}
+
+/* ADD TODO COMPONENT */
+
+.Form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(28, 28, 28);
+}
+
+.Form label {
+    color: #ACACAC;
+}
+
+.Form input {
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    border-bottom: 2px solid rgb(49, 49, 49);
+}
+
+.Form button {
+    background-color: green;
+    transition: .2s linear;
+}
+
+.Form button:disabled {
+    background-color: rgb(51, 51, 51);
+}
+
+/* TODO ITEM COMPONENT */
+
+.Card--holder {
+    width: 100%;
+    background-color: #313131;
+    flex-direction: column;
+}
+
+.Card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 1px solid rgb(44, 42, 42);
+}
+
+.Card--text {
+    align-self: flex-start;
+    margin: 10px;
+}
+
+.Card--text .line-through {
+    color: #ACACAC;
+    transition: .2s linear;
+}
+
+.Card--button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    align-self: flex-end;
+}
+
+.Card--button__done {
+    background-color: green;
+    transition: .5s linear;
+}
+
+.Card--button__done:hover {
+    box-shadow: 0 0 20px rgb(15, 199, 15);
+}
+
+.hide-button {
+    border: 2px solid rgb(39, 39, 39);
+    background-color: transparent;
+    color: #ACACAC;
+    transition: .2s linear;
+}
+
+.Card--button__delete {
+    background-color: red;
+    transition: .5s linear;
+}
+
+.Card--button__delete:hover {
+    box-shadow: 0 0 20px rgb(255, 0, 0);
 }

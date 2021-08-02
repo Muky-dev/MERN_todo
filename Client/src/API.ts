@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const baseUrl: string | undefined = process.env.API_URL;
+const baseUrl: string | undefined = process.env.REACT_APP_API_URI;
 
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
     try {

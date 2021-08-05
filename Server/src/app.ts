@@ -12,6 +12,11 @@ app.use(express.urlencoded({ limit: "10mb", extended: false }));
 app.use(express.json());
 app.use(todoRoutes);
 
+// 404 handling
+app.get('*', (req, res, next) => {
+    res.status(404).json({ message: 'Not Found' });
+});
+
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.cjwpt.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 const DB_options = {
